@@ -12,6 +12,7 @@ namespace _2.Grades
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
-        List<float> grades; /*State Member that holds float number; it can hold 0 or 1000*/ 
+        List<float> grades = new List<float>(); /*State Member that holds float number; it can hold 0 or 1000
+                                                  It also has to be initialized before being used by invoking new keyword method*/ 
     }
 }

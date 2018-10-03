@@ -10,6 +10,10 @@ namespace _2.Grades
     {
         static void Main(string[] args)
         {
+            GradeBook book = new GradeBook(); /*Instances of classes is not defined as defining variables, a method new has to be invoked*/
+            book.AddGrade(20); /* Add 20 into grades field using AddGrade Member*/
+            book.AddGrade(8.5f); /*8.5 is considered as precision of double so an f has to used to tell it is a float number*/
+
         }
     }
 }
