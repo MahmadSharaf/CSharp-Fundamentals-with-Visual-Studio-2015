@@ -7,7 +7,9 @@ namespace _1.Hello
     {
         static void Main(string[] args) /*args are the input send by the user*/
         {
-            Console.WriteLine("Hello," + args[0]);
+            Console.WriteLine("Your Name: ");
+            string name = Console.ReadLine(); /*Scans for an input*/
+            Console.WriteLine("Hello," + name); /*Prints out*/
         }
     }
 }
