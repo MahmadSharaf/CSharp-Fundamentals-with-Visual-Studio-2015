@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2.Grades
 {
-    class GradeBook
+    public class GradeBook // The class access modifier changed from 
+                            // implicity internal"scope inside class only" to explicity public "its scope is everywhere" 
     {/*Members can be Behavior which are the actions, and can be states that holdes the contents*/
         public GradeBook()
         { /* This an explicit constructor that is used to initialize objects or variables*/

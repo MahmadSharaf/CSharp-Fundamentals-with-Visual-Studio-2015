@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2.Grades
 { /* This class encapsulates the algorithm for computing Avg, Min, and Max Grade*/
-    class GradeStatisitcs
+    public class GradeStatisitcs
     {
         public GradeStatisitcs()
         {
