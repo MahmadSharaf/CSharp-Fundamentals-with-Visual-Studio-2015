@@ -13,11 +13,27 @@ namespace _2.Grades
             grades = new List<float>(); /*This initialize variable grades at the instantiate stage*/
         }
 
+        public GradeStatisitcs ComputeStatistics()
+        {/* This member method calculates  Avg, Min, and Max Grade 
+            It returns a variable of type GradeStatistics*/
+            GradeStatisitcs stats = new GradeStatisitcs(); /* A variable of GradeStatistics type*/
+
+            float sum = 0;
+
+            foreach(float grade in grades) 
+            {
+                sum += grade;
+                stats.HighestGrade = Math.Max(grade, stats.HighestGrade);/*Math.Max returns the highest between two given values*/
+                stats.LowestGrade = Math.Min(grade, stats.LowestGrade);
+            }
+            stats.AverageGrade = sum/grades.Count;/*grades.Count returns the number of items inside grades list*/
+            return stats;
+        }
         public void AddGrade(float grade) /* Behavior Member*/
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
-        List<float> grades; /*State Member that holds float number; it can hold 0 or 1000
+        public List<float> grades; /*State Member that holds float numbers; it can hold 0 or 100
                             No need for initializing this as it is already initialized in the constructor*/ 
     }
 }
