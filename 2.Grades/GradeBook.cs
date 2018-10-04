@@ -8,11 +8,16 @@ namespace _2.Grades
 {
     class GradeBook
     {/*Members can be Behavior which are the actions, and can be states that holdes the contents*/
+        public GradeBook()
+        { /* This an explicit constructor that is used to initialize objects or variables*/
+            grades = new List<float>(); /*This initialize variable grades at the instantiate stage*/
+        }
+
         public void AddGrade(float grade) /* Behavior Member*/
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
-        List<float> grades = new List<float>(); /*State Member that holds float number; it can hold 0 or 1000
-                                                  It also has to be initialized before being used by invoking new keyword method*/ 
+        List<float> grades; /*State Member that holds float number; it can hold 0 or 1000
+                            No need for initializing this as it is already initialized in the constructor*/ 
     }
 }
