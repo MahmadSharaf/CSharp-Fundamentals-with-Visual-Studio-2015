@@ -8,10 +8,12 @@ namespace _2.Grades
 {
     public class GradeBook // The class access modifier changed from 
                             // implicity internal"scope inside class only" to explicity public "its scope is everywhere" 
+
     {/*Members can be Behavior which are the actions, and can be states that holdes the contents*/
         public GradeBook()
         { /* This an explicit constructor that is used to initialize objects or variables*/
             grades = new List<float>(); /*This initialize variable grades at the instantiate stage*/
+            _name = "Empty"; // initialize _name as not to be null
         }
 
         public GradeStatisitcs ComputeStatistics()
@@ -35,7 +37,8 @@ namespace _2.Grades
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
-        // Properties all about state while methods all about behaviors
+
+        // Properties all about state while methods are all about behaviors
         public string Name // this a property
         {
             // get; set; //auto implemented accessors
@@ -47,10 +50,15 @@ namespace _2.Grades
             {
                 if(!String.IsNullOrEmpty(value))
                 {
+                    if(_name!=value)
+                    {
+                        NameChanged(_name, value);
+                    }
                     _name = value;
                 }
             }
         }
+        public NameChangedDelegate NameChanged; //An instance of the delegate
         private string _name;
         public List<float> grades; /*State Member that holds float numbers; it can hold 0 or 100
                             No need for initializing this as it is already initialized in the constructor*/ 
