@@ -35,8 +35,23 @@ namespace _2.Grades
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
-
-        public string Name;
+        // Properties all about state while methods all about behaviors
+        public string Name // this a property
+        {
+            // get; set; //auto implemented accessors
+            get //do computations or retrieve some field value and return it
+            {
+                return _name;
+            }
+            set //it can preform validations and protect the internal state of the object
+            {
+                if(!String.IsNullOrEmpty(value))
+                {
+                    _name = value;
+                }
+            }
+        }
+        private string _name;
         public List<float> grades; /*State Member that holds float numbers; it can hold 0 or 100
                             No need for initializing this as it is already initialized in the constructor*/ 
     }
