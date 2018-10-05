@@ -30,10 +30,13 @@ namespace _2.Grades
             stats.AverageGrade = sum/grades.Count;/*grades.Count returns the number of items inside grades list*/
             return stats;
         }
+
         public void AddGrade(float grade) /* Behavior Member*/
         {
             grades.Add(grade); /* Adds the value in grade variable to member grades*/
         }
+
+        public string Name;
         public List<float> grades; /*State Member that holds float numbers; it can hold 0 or 100
                             No need for initializing this as it is already initialized in the constructor*/ 
     }
