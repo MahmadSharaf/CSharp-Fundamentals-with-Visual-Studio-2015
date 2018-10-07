@@ -40,7 +40,6 @@ namespace _2.Grades
                 return result;
             }
         }
-
         public string LetterGrade
         {
             get

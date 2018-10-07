@@ -12,22 +12,17 @@ namespace _2.Grades
     {
         static void Main(string[] args)
         {
-            SunthesizedSpeaking("Hello! This is program made by Mohamed Sharaf.");
-
-            GradeBook book = new GradeBook(); /*Instances of classes is not defined as defining variables, a method new has to be invoked*/
-
+         // SynthesizedSpeaking("Hello! This is program made by Mohamed Sharaf.");
+            GradeBook book = new ThrowAwayLowestGrade(); /*Instances of classes is not defined as defining variables, a method new has to be invoked*/
             CheckNameChange(book);
-
-            GetBookName(book);
+         // GetBookName(book);
             Console.WriteLine(book.Name);
             AddGrades(book);
-
             SaveGrades(book);
-
             WriteResults(book);
         }
 
-        private static void SunthesizedSpeaking(string text)
+        private static void SynthesizedSpeaking(string text)
         {
             /* This class speaks out the string*/
             SpeechSynthesizer synth = new SpeechSynthesizer();
@@ -47,7 +42,7 @@ namespace _2.Grades
             WriteResult("Highest Grade", (int)stats.HighestGrade); //First method is used
             WriteResult("Lowest Grade", stats.LowestGrade);        //Second method is used  
             WriteResult("Average Grade", stats.AverageGrade);      //Second method is used
-            WriteResult(stats.Description, stats.LetterGrade);    //Third method is used
+            WriteResult(stats.Description, stats.LetterGrade);     //Third method is used
         }
 
         private static void SaveGrades(GradeBook book)
@@ -90,6 +85,7 @@ namespace _2.Grades
         {
             Console.WriteLine($"Grade Book Name Changed From {existingName} to {newName}");
         }
+
         // Two methods(functions) with same name but different params type
         // one takes integers as input and the other takes float
         // the compiler choose the one that make sense
