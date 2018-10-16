@@ -53,7 +53,7 @@ namespace _2.Grades
                 //The WriteGrade method in GradeBook class expects data of StreamWriter type
                 book.WriteGrade(output);
                 // output.Close(); // This has to be used to save the data, as any type of Stream whether it is a FileStream or NetworkStream, 
-                // Streams has tendency for buffring
+                // Streams has tendency for buffering
             }
         }
 
