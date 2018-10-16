@@ -12,13 +12,17 @@ namespace _2.Grades
     {
         static void Main(string[] args)
         {
-         // SynthesizedSpeaking("Hello! This is program made by Mohamed Sharaf.");
-            GradeBook book = new ThrowAwayLowestGrade(); /*Instances of classes is not defined as defining variables, a method new has to be invoked*/
+            // SynthesizedSpeaking("Hello! This is program made by Mohamed Sharaf.");
+            IGradeTracker book = new ThrowAwayLowestGrade(); /*Instances of classes is not defined as defining variables, a method new has to be invoked*/
             CheckNameChange(book);
-         // GetBookName(book);
+            GetBookName(book);
             Console.WriteLine(book.Name);
             AddGrades(book);
             SaveGrades(book);
+            foreach(float grade in book)
+            {
+                Console.WriteLine(grade);
+            }
             WriteResults(book);
         }
 
@@ -29,14 +33,14 @@ namespace _2.Grades
             synth.Speak(text);
         }
 
-        private static void CheckNameChange(GradeBook book)
+        private static void CheckNameChange(IGradeTracker book)
         {
             book.NameChanged += new NameChangedDelegate(OnNameChanged); //subscriber // NameChanged is now an event, so += or -= has to be used
             book.NameChanged += OnNameChanged; // event can be defined by the name of the method only no need for new keyword or the delegate method name
             book.NameChanged -= new NameChangedDelegate(OnNameChanged);//unsubscriber // -= removes one instance 
         }
 
-        private static void WriteResults(GradeBook book)
+        private static void WriteResults(IGradeTracker book)
         {
             GradeStatisitcs stats = book.ComputeStatistics();
             WriteResult("Highest Grade", (int)stats.HighestGrade); //First method is used
@@ -45,7 +49,7 @@ namespace _2.Grades
             WriteResult(stats.Description, stats.LetterGrade);     //Third method is used
         }
 
-        private static void SaveGrades(GradeBook book)
+        private static void SaveGrades(IGradeTracker book)
         {
             // using is used to dispose unneeded data if an unhandled error occurred.
             using (StreamWriter output = File.CreateText("Grades.txt"))// Create an empty text file with File.createText which returns data with StreamWriter type
@@ -57,14 +61,14 @@ namespace _2.Grades
             }
         }
 
-        private static void AddGrades(GradeBook book)
+        private static void AddGrades(IGradeTracker book)
         {
             book.AddGrade(20); /* Add 20 into grades field using AddGrade Member*/
             book.AddGrade(8.5f); /*8.5 is considered as precision of double so an f has to used to tell it is a float number*/
             book.AddGrade(75);
         }
 
-        private static void GetBookName(GradeBook book)
+        private static void GetBookName(IGradeTracker book)
         {
             // This block make sure no null name is entered and continuously prompt until a not Null name entered
             do
