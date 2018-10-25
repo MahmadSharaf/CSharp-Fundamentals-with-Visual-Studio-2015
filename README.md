@@ -1,0 +1,2 @@
+# CSharp-Fundamentals-with-Visual-Studio-2015
+C# Fundamentals with Visual Studio 2015. It’s designed to help you learn the essential topics you need for developing with the C# programming language, and covers things building classes, programing with objects, and working with interfaces using the C# language. Along the way, you’ll be using C#, Visual Studio and .NET. When you’re done, you’ll be ready to to tackle your own projects in the C# programming language. From there, you can start exploring working with nulls in C#, as well as designing fluent APIs.
